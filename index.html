@@ -161,8 +161,8 @@
         const messageDiv = document.getElementById('message');
         const loader = document.getElementById('loader');
         
-        // Final, corrected URL after enabling the API
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCQPrkxavTLumXAMIa6m0JQtyZdeU0Y6ODAwMjG3_k_7JyCLc3i8jgB3_yXFyNw7nO/exec';
+        // --- ایمیل شما با موفقیت جایگزین شد ---
+        const SCRIPT_URL = 'https://formsubmit.co/ajax/hamidreza.soltanian@gmail.com';
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -188,15 +188,13 @@
 
             fetch(SCRIPT_URL, {
                 method: 'POST',
-                mode: 'cors',
-                cache: 'no-cache',
-                headers: {
+                headers: { 
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify(data),
-                 redirect: 'follow',
+                body: JSON.stringify(data)
             })
-            .then(res => res.json())
+            .then(response => response.json())
             .then(data => {
                 console.log(data);
                 messageDiv.textContent = 'اطلاعات شما با موفقیت ثبت شد. متشکریم!';
