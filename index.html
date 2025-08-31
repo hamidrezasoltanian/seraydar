@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم استخدام سرایدار</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        .form-checkbox {
+            margin-left: 0.5rem;
+        }
+        .required:after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md my-8">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-2">فرم استخدام سرایدار</h1>
+        <p class="text-center text-gray-600 mb-6">لطفاً فرم زیر را با دقت تکمیل نمایید.</p>
+
+        <form id="janitorForm" class="space-y-6">
+            
+            <!-- Personal Information -->
+            <div>
+                <h2 class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">بخش اول: اطلاعات فردی</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700 required">نام</label>
+                        <input type="text" id="firstName" name="نام" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium text-gray-700 required">نام خانوادگی</label>
+                        <input type="text" id="lastName" name="نام خانوادگی" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div>
+                        <label for="nationalId" class="block text-sm font-medium text-gray-700 required">کد ملی</label>
+                        <input type="text" id="nationalId" name="کد ملی" pattern="\d{10}" title="کد ملی باید ۱۰ رقم باشد" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div>
+                        <label for="mobile" class="block text-sm font-medium text-gray-700 required">شماره تماس (موبایل)</label>
+                        <input type="tel" id="mobile" name="شماره تماس" pattern="09\d{9}" title="شماره موبایل باید با 09 شروع شود و ۱۱ رقم باشد" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="address" class="block text-sm font-medium text-gray-700 required">آدرس دقیق محل سکونت</label>
+                        <textarea id="address" name="آدرس" rows="3" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
+                    </div>
+                     <div>
+                        <label class="block text-sm font-medium text-gray-700 required">تابعیت</label>
+                        <div class="mt-2 space-x-4 space-x-reverse">
+                           <label class="inline-flex items-center"><input type="radio" name="تابعیت" value="ایرانی" class="form-radio" required> <span class="mr-2">ایرانی</span></label>
+                           <label class="inline-flex items-center"><input type="radio" name="تابعیت" value="افغانستانی" class="form-radio"> <span class="mr-2">افغانستانی</span></label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 required">وضعیت تاهل</label>
+                        <div class="mt-2 space-x-4 space-x-reverse">
+                           <label class="inline-flex items-center"><input type="radio" name="وضعیت تاهل" value="مجرد" class="form-radio" required> <span class="mr-2">مجرد</span></label>
+                           <label class="inline-flex items-center"><input type="radio" name="وضعیت تاهل" value="متاهل" class="form-radio"> <span class="mr-2">متاهل</span></label>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 required">آیا مشکلی برای سکونت تمام وقت در واحد سرایداری دارید؟</label>
+                        <div class="mt-2 space-x-4 space-x-reverse">
+                           <label class="inline-flex items-center"><input type="radio" name="آمادگی سکونت" value="بله" class="form-radio" required> <span class="mr-2">بله</span></label>
+                           <label class="inline-flex items-center"><input type="radio" name="آمادگی سکونت" value="خیر" class="form-radio"> <span class="mr-2">خیر</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div>
+                 <h2 class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">بخش دوم: سوابق کاری</h2>
+                 <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 required">آیا سابقه کار مرتبط دارید؟</label>
+                         <div class="mt-2 space-x-4 space-x-reverse">
+                           <label class="inline-flex items-center"><input type="radio" name="سابقه کار" value="بله" class="form-radio" required> <span class="mr-2">بله</span></label>
+                           <label class="inline-flex items-center"><input type="radio" name="سابقه کار" value="خیر" class="form-radio"> <span class="mr-2">خیر</span></label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="previousWork" class="block text-sm font-medium text-gray-700">در صورت پاسخ مثبت، آخرین محل کار و مدت زمان همکاری را ذکر کنید.</label>
+                        <textarea id="previousWork" name="محل کار قبلی" rows="3" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+                    <div>
+                        <label for="reasonForLeaving" class="block text-sm font-medium text-gray-700">علت ترک کار قبلی چه بوده است؟</label>
+                        <input type="text" id="reasonForLeaving" name="علت ترک کار" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                     <div>
+                        <label for="reference" class="block text-sm font-medium text-gray-700">شماره تماس معرف یا مدیر قبلی</label>
+                        <input type="tel" id="reference" name="تماس معرف" pattern="0\d{10}" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div>
+                <h2 class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">بخش سوم: مهارت‌ها</h2>
+                <label class="block text-sm font-medium text-gray-700">کدام یک از مهارت‌های زیر را دارید؟</label>
+                <div class="mt-2 space-y-2">
+                    <label class="flex items-center"><input type="checkbox" name="مهارت‌ها" value="نظافت" class="form-checkbox"> <span class="mr-2">آشنایی با اصول نظافت صنعتی و آپارتمانی</span></label>
+                    <label class="flex items-center"><input type="checkbox" name="مهارت‌ها" value="تعمیرات" class="form-checkbox"> <span class="mr-2">توانایی انجام تعمیرات فنی جزئی (برق، لوله‌کشی و...)</span></label>
+                    <label class="flex items-center"><input type="checkbox" name="مهارت‌ها" value="باغبانی" class="form-checkbox"> <span class="mr-2">آشنایی با امور باغبانی و نگهداری از فضای سبز</span></label>
+                </div>
+            </div>
+            
+             <!-- Additional Questions -->
+            <div>
+                <h2 class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">بخش چهارم: سوالات تکمیلی</h2>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 required">آیا به سیگار یا هرگونه ماده مخدر اعتیاد دارید؟</label>
+                        <p class="text-xs text-gray-500">صداقت شما در پاسخگویی اهمیت بالایی دارد.</p>
+                         <div class="mt-2 space-x-4 space-x-reverse">
+                           <label class="inline-flex items-center"><input type="radio" name="اعتیاد" value="بله" class="form-radio" required> <span class="mr-2">بله</span></label>
+                           <label class="inline-flex items-center"><input type="radio" name="اعتیاد" value="خیر" class="form-radio"> <span class="mr-2">خیر</span></label>
+                        </div>
+                    </div>
+                     <div>
+                        <label class="block text-sm font-medium text-gray-700 required">آیا سوء پیشینه کیفری دارید؟</label>
+                         <div class="mt-2 space-x-4 space-x-reverse">
+                           <label class="inline-flex items-center"><input type="radio" name="سوء پیشینه" value="بله" class="form-radio" required> <span class="mr-2">بله</span></label>
+                           <label class="inline-flex items-center"><input type="radio" name="سوء پیشینه" value="خیر" class="form-radio"> <span class="mr-2">خیر</span></label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="salary" class="block text-sm font-medium text-gray-700 required">میزان حقوق درخواستی (تومان)</label>
+                        <input type="number" id="salary" name="حقوق درخواستی" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div>
+                        <label for="comments" class="block text-sm font-medium text-gray-700">توضیحات بیشتر</label>
+                        <textarea id="comments" name="توضیحات" rows="3" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Submission -->
+            <div>
+                <button type="submit" id="submitButton" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    ارسال اطلاعات
+                </button>
+                 <div id="loader" class="hidden text-center mt-4">
+                    <p>در حال ارسال اطلاعات...</p>
+                </div>
+                <div id="message" class="text-center mt-4 font-semibold"></div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('janitorForm');
+        const submitButton = document.getElementById('submitButton');
+        const messageDiv = document.getElementById('message');
+        const loader = document.getElementById('loader');
+        
+        // PASTE YOUR NEW WEB APP URL FROM STEP 2 HERE
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyyW-Bl4BRnJB379T_q-K2AXMPczLBeliM4A2tw_AWQLMz67fYg5I9YHVjq35PhEuAp/exec';
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            submitButton.disabled = true;
+            loader.classList.remove('hidden');
+            messageDiv.textContent = '';
+            
+            const formData = new FormData(form);
+            const data = {};
+            // Handling checkboxes
+            const skills = [];
+            document.querySelectorAll('input[name="مهارت‌ها"]:checked').forEach(checkbox => {
+                skills.push(checkbox.nextElementSibling.textContent.trim());
+            });
+            
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            data['مهارت‌ها'] = skills.join(', ');
+
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+                 redirect: 'follow',
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                messageDiv.textContent = 'اطلاعات شما با موفقیت ثبت شد. متشکریم!';
+                messageDiv.className = 'text-center mt-4 font-semibold text-green-600';
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                messageDiv.textContent = 'خطایی در ارسال اطلاعات رخ داد. لطفاً دوباره تلاش کنید.';
+                messageDiv.className = 'text-center mt-4 font-semibold text-red-600';
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                loader.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
